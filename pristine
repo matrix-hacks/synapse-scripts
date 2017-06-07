@@ -1,0 +1,11 @@
+#!/bin/bash
+set -x
+cd $(dirname "${BASH_SOURCE[0]}")
+source env/bin/activate
+synctl stop conf/homeserver.yaml
+rm conf/homeserver.db
+synctl start conf/homeserver.yaml
+export username="keyvan"
+/usr/bin/expect autoreg.exp
+export username="keyvan2"
+/usr/bin/expect autoreg.exp

@@ -1,0 +1,12 @@
+set username $::env(username)
+set pw qweqwe
+spawn src/scripts/register_new_matrix_user -c conf/homeserver.yaml
+expect ": "
+send "$username\n"
+expect ": "
+send "$pw\n"
+expect ": "
+send "$pw\n"
+expect ": "
+send "yes\n"
+interact

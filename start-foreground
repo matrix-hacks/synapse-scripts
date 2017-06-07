@@ -1,0 +1,4 @@
+#!/bin/bash
+cd $(dirname "${BASH_SOURCE[0]}")
+source env/bin/activate
+python2.7 -B -m synapse.app.homeserver -c conf/homeserver.yaml
